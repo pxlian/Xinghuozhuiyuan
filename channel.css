@@ -916,7 +916,7 @@ button:focus-visible {
 /* --- Video & Report cards --- */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -988,6 +988,11 @@ button:focus-visible {
 }
 
 /* Report card */
+.report-list {
+    display: grid;
+    gap: 1rem;
+}
+
 .report-card {
     display: grid;
     grid-template-columns: 42% minmax(0, 1fr);

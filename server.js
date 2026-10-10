@@ -15,6 +15,7 @@ const MIME = {
     ".webp": "image/webp",
     ".png":  "image/png",
     ".jpg":  "image/jpeg",
+    ".pdf":  "application/pdf",
     ".ico":  "image/x-icon",
     ".md":   "text/plain; charset=utf-8",
 };
