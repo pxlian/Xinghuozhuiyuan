@@ -370,6 +370,50 @@ button:focus-visible {
     transform: translateY(-2px);
 }
 
+.fieldwork-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    max-width: 35rem;
+    margin: 1.8rem 0 0;
+    border-top: 1px solid var(--line);
+    padding: 1rem 0 0;
+    list-style: none;
+}
+
+.fieldwork-stats li {
+    display: grid;
+    align-content: start;
+    gap: 0.05rem;
+    padding-inline: 0.8rem;
+}
+
+.fieldwork-stats li:first-child {
+    padding-left: 0;
+}
+
+.fieldwork-stats li + li {
+    border-left: 1px solid var(--line);
+}
+
+.fieldwork-stats strong {
+    color: var(--accent-deep);
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.fieldwork-stats span {
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
 .slogan-monument {
     position: relative;
     min-height: 370px;
@@ -966,6 +1010,25 @@ button:focus-visible {
 .video-card:hover .video-play {
     background: var(--accent-deep);
     transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-card-poster {
+    grid-template-rows: auto 1fr;
+}
+
+.video-card-poster .video-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #690f09;
+}
+
+.video-card-poster .video-cover img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
 }
 
 .video-body {
