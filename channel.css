@@ -967,7 +967,8 @@ button:focus-visible {
 .video-card {
     position: relative;
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
     overflow: hidden;
     border: 1px solid var(--line);
     background: rgba(243, 223, 189, 0.52);
@@ -979,15 +980,28 @@ button:focus-visible {
     box-shadow: 0 12px 28px rgba(67, 42, 25, 0.15);
 }
 
-.video-card img {
+.video-cover {
+    position: relative;
+    display: block;
     width: 100%;
+    min-width: 0;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    overflow: hidden;
+    background: var(--paper-deep);
+}
+
+.video-cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
 .video-play {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1012,23 +1026,8 @@ button:focus-visible {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.video-card-poster {
-    grid-template-rows: auto 1fr;
-}
-
 .video-card-poster .video-cover {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
     background: #690f09;
-}
-
-.video-card-poster .video-cover img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: contain;
 }
 
 .video-body {
@@ -1118,7 +1117,7 @@ button:focus-visible {
 
 @media (max-width: 880px) {
     .video-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .report-card {
@@ -1137,7 +1136,7 @@ button:focus-visible {
 
 @media (max-width: 620px) {
     .video-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .report-body {
